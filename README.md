@@ -79,6 +79,9 @@ coffee_table = (
 coffee_table.save("data/coffee-table.png",  scale=2)
 ```
 
+See this [example_notebook.ipynb](./example_notebook.ipynb) for this
+code in jupyter notebook form.
+
 ## Regenerating data and README
 
 ``` bash
