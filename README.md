@@ -2,8 +2,9 @@
 
 
 This repository generates sales data for a fictitious coffee device
-store. It’s used to generate this table for the Great Tables examples
-gallery (scroll down for code):
+store (see this [jupyter notebook](./example_notebook.ipynb)). It’s used
+to generate this table for the Great Tables examples gallery (scroll
+down for code):
 
 ![An image of a Great Table output, which is an HTML table. Each row is
 a coffee product](./data/coffee-table.png)
