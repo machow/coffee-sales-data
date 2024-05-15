@@ -1,7 +1,7 @@
-all: coffee-sales.json coffee-sales.parquet README.md coffee-table.png
+all: data/coffee-sales.json data/coffee-sales.parquet data/coffee-table.png README.md 
 
-coffee-sales.json coffee-sales.parquet: 1-generate.py
-	python 1-generate.py
+data/coffee-sales.json data/coffee-sales.parquet: scripts/1-generate.py
+	python $<
 
-README.md coffee-table.png: README.qmd
+README.md data/coffee-table.png: README.qmd
 	quarto render README.qmd

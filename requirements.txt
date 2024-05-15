@@ -1,0 +1,5 @@
+great-tables[extras]
+jupyter
+pandas
+polars
+pyarrow

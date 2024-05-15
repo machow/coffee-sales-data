@@ -6,7 +6,7 @@ store. It’s used to generate this table for the Great Tables examples
 gallery (scroll down for code):
 
 ![An image of a Great Table output, which is an HTML table. Each row is
-a coffee product](./coffee-table.png)
+a coffee product](./data/coffee-table.png)
 
 ## Code for table
 
@@ -15,7 +15,7 @@ import polars as pl
 import polars.selectors as cs
 from great_tables import GT, loc, style
 
-coffee_sales = pl.read_json("coffee-sales.json")
+coffee_sales = pl.read_json("data/coffee-sales.json")
 ```
 
 ``` python
@@ -63,7 +63,7 @@ coffee_table = (
     .sub_missing(missing_text="")
 )
 
-coffee_table.save("coffee-table.png",  scale=2)
+coffee_table.save("data/coffee-table.png",  scale=2)
 ```
 
 ## Regenerating data and README

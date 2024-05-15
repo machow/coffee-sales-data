@@ -155,8 +155,8 @@ df['monthly_sales'] = df.apply(apply_popularity_trends, axis=1)
 # %%
 # back to human code ----
 full_table = simple_table.join(pl.from_pandas(df[["product", "monthly_sales"]]), "product", how="left")
-full_table.write_parquet("coffee-sales.parquet")
-full_table.write_json("coffee-sales.json")
+full_table.write_parquet("data/coffee-sales.parquet")
+full_table.write_json("data/coffee-sales.json")
 
 
 # %%
