@@ -5,8 +5,17 @@ format: gfm
 
 ---
 
-This repository generates sales data for a fictitious coffee device store (see this [jupyter notebook](./example_notebook.ipynb)).
-It's used to generate this table for the Great Tables examples gallery (scroll down for code):
+This repository generates sales data for a fictitious coffee device store.
+
+Here are some useful pieces:
+
+* [example_notebook.ipynb](./example_notebook.ipynb): jupyter notebook example.
+* [README.qmd](./README.qmd): the [quarto](https://quarto.org) document which generated this page.
+* [Great Tables](https://github.com/posit-dev/great-tables): python library making the beautiful tables.
+
+## What can I do with it?
+
+This repo is used to generate this table for the Great Tables examples gallery (scroll down for code):
 
 ![An image of a Great Table output, which is an HTML table. Each row is a coffee product](./data/coffee-table.png)
 
