@@ -164,3 +164,4 @@ full_table.write_json("coffee-sales.json")
 
 # %%
 GT(full_table).fmt_nanoplot("monthly_sales", plot_type="bar")
+# %%
