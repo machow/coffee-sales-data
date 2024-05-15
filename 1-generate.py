@@ -152,9 +152,6 @@ def apply_popularity_trends(row):
 # Apply trend adjustments
 df['monthly_sales'] = df.apply(apply_popularity_trends, axis=1)
 
-# Display the final DataFrame
-print(df[['product', 'monthly_sales']])
-
 # %%
 # back to human code ----
 full_table = simple_table.join(pl.from_pandas(df[["product", "monthly_sales"]]), "product", how="left")

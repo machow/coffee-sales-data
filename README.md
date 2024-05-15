@@ -1,6 +1,15 @@
 # Coffee sales data
 
 
+This repository generates sales data for a fictitious coffee device
+store. It’s used to generate this table for the Great Tables examples
+gallery (scroll down for code):
+
+![An image of a Great Table output, which is an HTML table. Each row is
+a coffee product](./coffee-table.png)
+
+## Code for table
+
 ``` python
 import polars as pl
 import polars.selectors as cs
@@ -57,5 +66,15 @@ coffee_table = (
 coffee_table.save("coffee-table.png",  scale=2)
 ```
 
-![An image of a Great Table output, which is an HTML table. Each row is
-a coffee product](./coffee-table.png)
+## Regenerating data and README
+
+``` bash
+# generate data ----
+python 1-generate.py
+
+# generate README.md ----
+quarto render README.qmd
+
+# or to do everything in one command
+make all
+```
