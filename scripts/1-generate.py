@@ -62,8 +62,8 @@ simple_table = pl.DataFrame(
 
 simple_table = simple_table.with_columns(
     cs.ends_with("dollars") * 1000,
-    revenue_pct=(pl.col("revenue_dollars") / pl.col("revenue_dollars").sum()).round(2),
-    margin_pct=(pl.col("margin_dollars") / pl.col("margin_dollars").sum()).round(2),
+    revenue_pct=pl.col("revenue_dollars") / pl.col("revenue_dollars").sum(),
+    margin_pct=pl.col("margin_dollars") / pl.col("margin_dollars").sum(),
 ).select(
     pl.col("product").str.to_lowercase().str.replace(" ", "-").add(".png").alias("icon"),
     pl.col("product"),
@@ -71,11 +71,14 @@ simple_table = simple_table.with_columns(
     cs.starts_with("margin").name.map(lambda x: x.replace("margin", "profit")),
 )
 
-simple_table = pl.concat(
-    [
-        simple_table,
-        simple_table.select(pl.all().sum()).with_columns(product=pl.lit("Total")),
-    ]
+simple_table = (
+    pl.concat(
+        [
+            simple_table,
+            simple_table.select(pl.all().sum()).with_columns(product=pl.lit("Total")),
+        ]
+    )
+    .with_columns(cs.ends_with("pct").round(2))
 )
 
 
